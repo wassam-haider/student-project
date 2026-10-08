@@ -56,7 +56,7 @@
 # stage 3 and beyond
 from logger import logger
 from utils.validation import validate_name, validate_marks
-from services.calculator import calculate_grade
+from services.calculator import calculate_grade, is_pass
 
 logger.info("Application started")
 
@@ -81,6 +81,8 @@ if not validate_marks(marks):
     exit()
 
 grade = calculate_grade(marks)
+status = "Pass" if is_pass(marks) else "Fail"
+
 
 logger.info(f"Grade calculated for {name}: {grade}")
             
@@ -90,3 +92,4 @@ print("----------------")
 print(f"Name: {name}")
 print(f"Marks: {marks}")
 print(f"Grade: {grade}")
+print(f"Status: {status}")

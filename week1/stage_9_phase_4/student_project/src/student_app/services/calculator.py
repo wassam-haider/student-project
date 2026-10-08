@@ -12,3 +12,6 @@ def calculate_grade(marks):
         return "D"
     else:
         return "F"
+    
+def is_pass(marks):
+    return marks >= 50
